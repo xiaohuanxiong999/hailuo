@@ -232,7 +232,7 @@ function gotoContact(){
   if(location.protocol==='file:'){ location.href='../contact/index.html'; return; }
   var sc='';
   try{ sc=new URLSearchParams(location.search).get('sharecode')||''; }catch(e){}
-  location.href='/infuse/contact/'+('?sharecode='+(sc||'WL4E3TYTAS'));
+  location.href='../../infuse/contact/'+('?sharecode='+(sc||'WL4E3TYTAS'));
 }
 document.getElementById('navContact').addEventListener('click', gotoContact);
 

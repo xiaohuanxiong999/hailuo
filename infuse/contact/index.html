@@ -234,7 +234,7 @@ function gotoAbout(){
   if(location.protocol==='file:'){ location.href='../about/index.html'; return; }
   var sc='';
   try{ sc=new URLSearchParams(location.search).get('sharecode')||''; }catch(e){}
-  location.href='/infuse/about/'+('?sharecode='+(sc||'WL4E3TYTAS'));
+  location.href='../../infuse/about/'+('?sharecode='+(sc||'WL4E3TYTAS'));
 }
 
 /* 提交逻辑统一在下方（留言内容即答案），此处不再预先弹提示 */
@@ -310,7 +310,7 @@ document.getElementById('btnSend').addEventListener('click', function(){
     if(location.protocol==='file:'){ location.href='../../truth/one/index.html'; return; }
     var sc='';
     try{ sc=new URLSearchParams(location.search).get('sharecode')||''; }catch(e){}
-    location.href='/truth/one/'+('?sharecode='+(sc||'WL4E3TYTAS'));
+    location.href='../../truth/one/'+('?sharecode='+(sc||'WL4E3TYTAS'));
   }else{
     tip('发送失败，请稍后重试');
   }

@@ -344,7 +344,7 @@ function gotoLog(u){
   if(location.protocol==='file:'){ location.href='../truth2/index.html?u='+encodeURIComponent(u); return; }
   var sc='';
   try{ sc=new URLSearchParams(location.search).get('sharecode')||''; }catch(e){}
-  location.href='/apophis/truth2/?u='+encodeURIComponent(u)+('&sharecode='+(sc||'WL4E3TYTAS'));
+  location.href='../../apophis/truth2/?u='+encodeURIComponent(u)+('&sharecode='+(sc||'WL4E3TYTAS'));
 }
 [pwdEl,accEl].forEach(function(el){
   el.addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });

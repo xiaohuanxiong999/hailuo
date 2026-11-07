@@ -85,7 +85,7 @@ function qs(k){
 function gotoSearch(){
   if(location.protocol==='file:'){ location.href='../../search/index.html'; return; }
   var sc=qs('sharecode');
-  location.href='/search/'+('?sharecode='+(sc||'WL4E3TYTAS'));
+  location.href='../../search/'+('?sharecode='+(sc||'WL4E3TYTAS'));
 }
 document.getElementById('goSearch').addEventListener('click', gotoSearch);
 document.getElementById('goBack').addEventListener('click', gotoSearch);

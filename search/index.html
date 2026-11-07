@@ -555,7 +555,7 @@ function open1(href){
       location.href='file://'+location.pathname.replace(/\/search\/index\.html.*$/,'')+norm(href)+'/index.html';
     } else {
       // 正式站必须带 sharecode，丢了这个参数会被网关拦成“链接不完整”页
-      location.href=norm(href)+'/?sharecode='+GETSC();
+      location.href='../'+norm(href).replace(/^\/+/,'')+'/?sharecode='+GETSC();
     }
   }
   else toast('该链接暂不可访问');

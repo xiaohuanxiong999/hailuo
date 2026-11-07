@@ -185,7 +185,7 @@ var curU=(function(){
     /* 未登录：只弹回，绝不写入 hl_apo_user（否则 board 会预填没登录过的账号） */
     if(location.protocol==='file:'){ location.href='../board/index.html'; return; }
     var sc=qs('sharecode');
-    location.href='/apophis/board/'+('?sharecode='+(sc||'WL4E3TYTAS'));
+    location.href='../../apophis/board/'+('?sharecode='+(sc||'WL4E3TYTAS'));
     throw new Error('guard');   /* 中断后续脚本，防止下面再写 localStorage */
   }
   try{ localStorage.setItem('hl_apo_user',curU); }catch(e){}
@@ -309,7 +309,7 @@ mask.addEventListener('click', function(e){ if(e.target===mask) mask.classList.r
 document.getElementById('backgate').addEventListener('click', function(){
   if(location.protocol==='file:'){ location.href='../board/index.html'; return; }
   var sc=qs('sharecode');
-  location.href='/apophis/board/'+('?sharecode='+(sc||'WL4E3TYTAS'));
+  location.href='../../apophis/board/'+('?sharecode='+(sc||'WL4E3TYTAS'));
 });
 
 var bloodStarted=false;
@@ -495,7 +495,7 @@ function bleed(){
         bleed._gone=true;
         setTimeout(function(){
           var sc=qs('sharecode');
-          location.href='/ending/?sharecode='+(sc||'WL4E3TYTAS');
+          location.href='../../ending/?sharecode='+(sc||'WL4E3TYTAS');
         },1100);
       }
     }
@@ -514,7 +514,7 @@ function bleed(){
 /* 通关入口：prophet 视图可见（disciple 演出会自动进入，无需按钮） */
 if(curU!=='disciple'){ document.getElementById('endgate').classList.add('on'); }
 document.getElementById('btnEnding').addEventListener('click', function(){
-  location.href='/ending/?sharecode='+qs('sharecode');
+  var sc0=qs('sharecode'); location.href='../../ending/'+(sc0?('?sharecode='+sc0):'');
 });
 </script>
 </body>

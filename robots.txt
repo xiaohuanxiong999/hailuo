@@ -1,0 +1,3 @@
+# 私人游戏站点，禁止爬虫收录
+User-agent: *
+Disallow: /

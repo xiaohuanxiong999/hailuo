@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#040404}
+  body{color:#b98cf2;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px;line-height:2.1;
+    background-image:radial-gradient(ellipse 80% 55% at 50% -10%, rgba(110,60,200,.20), transparent 70%),
+                     repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 3px);
+    background-attachment:fixed}
+  ::selection{background:#9b6ef0;color:#0b0614}
+  .wrap{position:relative;max-width:680px;margin:0 auto;padding:72px 24px 90px;z-index:2}
+  .doc p{margin:0 0 22px;text-shadow:0 0 18px rgba(150,90,240,.16)}
+  .pwd{color:#ff3b47;font-weight:700;
+    text-shadow:0 0 9px rgba(255,60,70,.45), 0 0 22px rgba(200,15,25,.3)}
+  .scan{position:fixed;inset:0;pointer-events:none;z-index:9;
+    background:linear-gradient(to bottom, transparent 0%, rgba(150,90,240,.05) 50%, transparent 100%);
+    animation:scanmove 7s linear infinite}
+  @keyframes scanmove{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
+</style>
+</head>
+<body>
+<div class="scan"></div>
+<div class="wrap doc">
+  <p>几个月前，我开始觉察到某些人在使用公司生产线，而没有经过正规的审批和记录。这是重大的安全事故，然而，尽管他们毫不避讳自己的存在，我仍然只有在他们愿意的时候，才能顺着他们给出的线索追查下去。</p>
+  <p>我知道他们的名字是apophis，但我无法单凭这一点做什么。那时候公司已有上市的意向，经过考虑，我决定暂时任由这件事发展下去……就算当时的我甚至根本不明白这到底意味着什么。</p>
+  <p>几乎是在我觉察到他们存在的同时，我们的产品疗效突飞猛进，研发报告的数据漂亮得不可思议。我知道这其中一定有什么关联，但其他人都觉得这是一个一举占据市场龙头的机会，我只能暂时搁置这些怀疑，全身心投入在上市的准备。</p>
+  <p>但他显然不同意我们的决定。也正是因为他，apophis最终被以强硬的手段控制住了，这件事就这么在公司内部平息了下去——或者说，他接受了他们的“遗产”。</p>
+  <p>无论如何，我再也不觉得留在这里是一个正确的决定，我也无法承担这么多人的命运，不能下定决心为infuse选择一个未来。</p>
+  <p>他的做法比我想象的还要极端，他一定要给这一切一个终结。从我认识他开始，他一直是一个如此决断的人。最后我还是答应了支持他们的行动，以一种袖手旁观的方式。</p>
+  <p>这到底是不是一个配得上infuse的结局？我不知道，我也不愿意去想，我只能用我的余生记住这件事，然后面对理应由我承受的一切。</p>
+  <p class="pwd">“登录密码：endthecycle”</p>
+</div>
+<script>
+/* 玩家已读到「登录密码」所在文章 → jj 帖登录框首次打开自动打出 prophet */
+try{ localStorage.setItem('hl_saw_pwd_article','1'); }catch(e){}
+</script>
+</body>
+</html>

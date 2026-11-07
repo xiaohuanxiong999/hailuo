@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>感谢游玩</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:linear-gradient(180deg,#9fe6c8 0%,#4db892 12%,#1f8a68 30%,#0f5f47 52%,#093b2d 74%,#04241c 100%);
+    background-attachment:fixed;
+    color:#eafff5;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    overflow-x:hidden;
+    -webkit-user-select:text;user-select:text;
+  }
+
+  /* 水面光斑 */
+  .cau{position:fixed;inset:-20%;pointer-events:none;z-index:1;mix-blend-mode:screen;opacity:.5;
+    background:
+      radial-gradient(42% 30% at 22% 16%, rgba(190,255,225,.32), transparent 70%),
+      radial-gradient(36% 26% at 74% 24%, rgba(160,255,220,.26), transparent 70%),
+      radial-gradient(50% 34% at 50% 8%,  rgba(220,255,240,.30), transparent 72%);
+    animation:cauMove 16s ease-in-out infinite alternate}
+  .cau.b{inset:-30%;opacity:.34;animation-duration:23s;animation-direction:alternate-reverse;
+    background:
+      radial-gradient(30% 22% at 60% 38%, rgba(150,255,210,.22), transparent 70%),
+      radial-gradient(34% 24% at 18% 46%, rgba(170,255,225,.18), transparent 72%)}
+  @keyframes cauMove{
+    0%{transform:translate3d(-2.5%,-1.5%,0) scale(1)}
+    50%{transform:translate3d(2%,1%,0) scale(1.06)}
+    100%{transform:translate3d(-1%,2.5%,0) scale(1.02)}}
+
+  /* 光柱 */
+  .ray{position:fixed;top:-8%;width:16vw;height:64vh;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(220,255,238,.20),rgba(220,255,238,0) 78%);
+    transform-origin:top center;filter:blur(9px);
+    animation:raySway 9s ease-in-out infinite alternate}
+  .ray.r1{left:12%;transform:rotate(9deg)}
+  .ray.r2{left:38%;width:9vw;transform:rotate(-6deg);animation-delay:-3s;opacity:.7}
+  .ray.r3{left:66%;width:12vw;transform:rotate(13deg);animation-delay:-6s;opacity:.55}
+  @keyframes raySway{from{opacity:.75;transform:rotate(9deg)}to{opacity:.35;transform:rotate(3deg)}}
+
+  .wrap{position:relative;z-index:5;max-width:640px;margin:0 auto;padding:72px 26px 90px}
+
+  .ttl{text-align:center;margin-bottom:8px}
+  .ttl h1{font-size:33px;font-weight:800;letter-spacing:10px;color:#f2fff9;
+    text-shadow:0 2px 18px rgba(10,80,58,.55),0 0 34px rgba(140,255,205,.28);
+    display:inline-block}
+  .ttl h1 span{letter-spacing:0;margin-right:-10px}
+  .hr{width:90px;height:3px;border-radius:3px;margin:24px auto 34px;
+    background:linear-gradient(90deg,transparent,#8fe8c4,transparent)}
+
+  p.txt{font-size:15.5px;line-height:2.05;color:#e6fbf1;margin:0 0 26px;
+    text-shadow:0 1px 10px rgba(6,50,36,.5)}
+  p.txt b{color:#ffffff}
+  .lead{text-align:center;max-width:520px;margin:0 auto 22px}
+
+  .vid{margin:0 auto 34px;max-width:520px;background:#fff;border-radius:14px;padding:10px;
+    box-shadow:0 14px 44px rgba(3,32,23,.55)}
+  .vid img{width:100%;display:block;border-radius:9px}
+  .vid .cap{margin-top:9px;text-align:center;font-size:13px;color:#0d7a4a;font-weight:600;letter-spacing:1.5px}
+
+  .card{background:rgba(8,58,43,.38);border:1px solid rgba(160,240,205,.22);
+    border-radius:16px;padding:22px 22px;margin:0 0 26px;
+    box-shadow:0 10px 34px rgba(3,30,22,.35);backdrop-filter:blur(4px)}
+  .card p{margin:0 0 18px}
+  .card p:last-child{margin:0}
+
+  .decl{margin-top:44px;padding-top:24px;border-top:1px dashed rgba(170,240,208,.3)}
+  .decl h3{font-size:14px;letter-spacing:4px;color:#c8f2de;margin-bottom:14px}
+  .decl p{font-size:12px;line-height:1.95;color:#b9e4d1;margin:0 0 10px;word-break:break-all}
+</style>
+</head>
+<body>
+<div class="cau"></div>
+<div class="cau b"></div>
+<div class="ray r1"></div><div class="ray r2"></div><div class="ray r3"></div>
+
+<div class="wrap">
+  <div class="ttl"><h1>感 谢 游 玩</h1></div>
+  <div class="hr"></div>
+
+  <p class="txt lead">感谢你的游玩！长话短说，如果你没有触发某个彩蛋的话，可以去看看下面这个视频（游戏本质为此视频同人）；</p>
+
+  <div class="vid">
+    <img src="squid.jpg?sharecode=WL4E3TYTAS" alt="Only_A_Squid">
+    <div class="cap">YouTube · Only_A_Squid</div>
+  </div>
+
+  <p class="txt lead">如果你触发了这个彩蛋（即我假设你已经看过上面那个了），嗯......或许你可以看看下面这个视频？</p>
+
+  <div class="vid">
+    <img src="stormz.jpg?sharecode=WL4E3TYTAS" alt="Stormz">
+    <div class="cap">YouTube · Stormz</div>
+  </div>
+
+  <div class="card">
+    <p class="txt" style="margin-bottom:16px;text-shadow:none">这段时间我正在找工作，连连受挫，生活各方面都比较糟，但转念一想做游戏在哪做不是做呢？最起码现在我能做出一些东西了，我很满足。现在大家都好辛苦，我衷心祝愿每个人都能多一点休息的时间，多一点玩的时间和创作的时间。</p>
+    <p class="txt" style="text-shadow:none">如果你也有想表达的东西，也想做出个游戏来的话，欢迎和我合作，请通过（B站）<b>白衣追月</b>联系我（bug反馈和评价也可以走这里），我偏好解谜推理类游戏。</p>
+  </div>
+
+  <div class="card">
+    <p class="txt" style="text-shadow:none">最后：非常感谢Only_A_Squid、Stormz和infuse的其余主播创作出这么棒的作品，非常感谢我的朋友<b>寒冰洗手液</b>帮忙测试与调整剧本，非常感谢我的朋友<b>小熊猫</b>帮忙测试。</p>
+    <p class="txt" style="text-shadow:none">再一次，非常感谢你的游玩和反馈让我感受到自己的价值，谢谢。</p>
+  </div>
+
+  <div class="decl">
+    <h3>声 明</h3>
+    <p>本游戏中所有图片（除壁画图片外）均来自pexels等免费图像网站。</p>
+    <p>壁画图片原图：“Cat and snake. Book of the Dead Tomb TT 359.jpg”，作者：Ismoon，来源：Wikimedia Commons，许可协议：CC BY-SA 4.0（https://creativecommons.org/licenses/by-sa/4.0/）。</p>
+    <p>修改说明：本游戏使用了该图片，并对其进行了滤镜调色及添加文字的处理。</p>
+  </div>
+</div>
+</body>
+</html>

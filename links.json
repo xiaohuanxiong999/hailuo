@@ -1,0 +1,49 @@
+{
+ "/infuse/about": {
+  "title": "Infuse生物医药 - 致力于用科技力量改善大众生活质量"
+ },
+ "/infuse/contact": {
+  "title": "联系我们 - Infuse生物医药"
+ },
+ "/truth/one": {
+  "title": "真相页面1（隐藏页）",
+  "file": "truth/one/index.html"
+ },
+ "/truth/two": {
+  "title": "真相页面2（隐藏页）"
+ },
+ "/tianwenguancha/news": {
+  "title": "这次真的不一样——2036年小行星即将撞地球？——天文观察",
+  "search_url": "host › news › tianwen-2036"
+ },
+ "/guanxingmingzhi/view": {
+  "title": "那颗星来了：与地球的2036年之约——观星明智"
+ },
+ "/ledao/question": {
+  "title": "2036年小行星撞地球是真的吗？普通人现在该干嘛？——乐道"
+ },
+ "/haiou/group/xingqiu": {
+  "title": "小行星到底能不能撞上地球 —海鸥小组"
+ },
+ "/haiou/group/cusi": {
+  "title": "这个世界怎么了？ —海鸥小组"
+ },
+ "/xinzhi/news": {
+  "title": "年轻运动员凌晨加练后猝死，年仅20岁——新知网"
+ },
+ "/cike/article": {
+  "title": "知名商贸公司销售员工连续加班后猝死，劳动监察部门介入——此刻网"
+ },
+ "/taosheng/news": {
+  "title": "某医药企业董事长突发心脏骤停去世，公司称经营正常——涛声时报"
+ },
+ "/ziwei/article": {
+  "title": "Infuse生物医药高管辞职，市值持续缩水——紫薇经济"
+ },
+ "/item/huishenxing": {
+  "title": "毁神星 - 海螺百科"
+ },
+ "/item/apep": {
+  "title": "阿佩普 - 海螺百科"
+ }
+}

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APOPHIS</title>
+<style>
+  @font-face{
+    font-family:'ApoSerif';
+    src:url(data:font/woff2;base64,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) format('woff2');
+    font-display:swap;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#040404}
+  body{color:#b8303a;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px;line-height:1.9;-webkit-user-select:text;user-select:text;
+    background-image:radial-gradient(ellipse 80% 55% at 50% -10%, rgba(120,10,16,.22), transparent 70%),
+                     repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 3px);
+    background-attachment:fixed}
+  ::selection{background:#b8303a;color:#000}
+
+  .scan{position:fixed;inset:0;pointer-events:none;z-index:9;
+    background:linear-gradient(to bottom, transparent 0%, rgba(180,20,30,.045) 50%, transparent 100%);
+    animation:scanmove 7s linear infinite}
+  @keyframes scanmove{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
+
+  .wrap{position:relative;max-width:700px;margin:0 auto;padding:0 20px 70px;z-index:2}
+
+  header{padding:34px 0 8px;display:flex;align-items:center;gap:16px}
+  .sigil{width:50px;height:50px;flex:none;
+    background:url("data:image/png;base64,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") center/contain no-repeat;
+    filter:drop-shadow(0 0 7px rgba(255,40,52,.85)) drop-shadow(0 0 20px rgba(216,31,43,.55)) drop-shadow(0 0 46px rgba(180,20,30,.4));
+    animation:siglow 3.2s ease-in-out infinite}
+  @keyframes siglow{0%,100%{filter:drop-shadow(0 0 7px rgba(255,40,52,.85)) drop-shadow(0 0 20px rgba(216,31,43,.55)) drop-shadow(0 0 46px rgba(180,20,30,.4))}
+    50%{filter:drop-shadow(0 0 10px rgba(255,40,52,1)) drop-shadow(0 0 28px rgba(216,31,43,.7)) drop-shadow(0 0 60px rgba(180,20,30,.5))}}
+  .brandwrap{display:flex;flex-direction:column;gap:2px}
+  .brand{font-family:'ApoSerif','Songti SC',serif;font-size:26px;font-weight:700;
+    letter-spacing:6px;color:#d81f2b;margin:0;text-indent:6px;line-height:1.2;
+    text-shadow:0 0 10px rgba(255,40,52,.9), 0 0 26px rgba(216,31,43,.75), 0 0 70px rgba(180,20,30,.6)}
+  .slogan{font-size:11px;letter-spacing:5px;color:#7d1419;text-indent:5px}
+  .btn{border:1px solid #551013;color:#a0242c;background:transparent;border-radius:1px;
+    padding:7px 20px;font-size:12.5px;letter-spacing:3px;cursor:pointer;font-family:inherit;
+    text-indent:3px;transition:.2s;
+    box-shadow:0 0 10px rgba(180,20,30,.35), inset 0 0 8px rgba(120,10,16,.25)}
+  .btn:hover{box-shadow:0 0 16px rgba(216,31,43,.55), inset 0 0 10px rgba(120,10,16,.35)}
+  .btn:hover{background:rgba(120,14,20,.18);border-color:#8e161c;color:#d81f2b}
+
+  .post{position:relative;background:linear-gradient(180deg,#0b0404,#070303);
+    border:1px solid #2b0a0d;border-radius:2px;padding:24px 26px 22px;margin-bottom:24px;
+    box-shadow:inset 0 0 60px rgba(110,8,14,.09), 0 1px 0 rgba(255,255,255,.015), 0 0 14px rgba(140,16,22,.16)}
+  .post::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+    background:linear-gradient(180deg,#8e161c,rgba(142,22,28,0))}
+  .post:hover{border-color:#461015}
+  .phead{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;
+    border-bottom:1px solid #1d0708}
+  .aname{font-family:'ApoSerif','Songti SC',serif;font-size:15px;font-weight:700;
+    letter-spacing:4px;color:#d81f2b;text-indent:4px}
+  .pdate{margin-left:auto;font-size:11.5px;color:#5a0f14;letter-spacing:1px}
+  .ptxt p{margin:0 0 15px;color:#8e2129}
+  .ptxt p:last-child{margin-bottom:0}
+  .ptxt b{color:#ff4d58;font-weight:700;
+    text-shadow:0 0 9px rgba(255,60,70,.5), 0 0 22px rgba(200,15,25,.35)}
+
+  .glitch{display:inline-block;position:relative;color:#ff2b38;
+    animation:tvglitch .66s steps(2,end) infinite;
+    text-shadow:1.6px 0 rgba(150,255,60,.75), -1.6px 0 rgba(255,0,80,.8)}
+  .glitch::before,.glitch::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;
+    background:#070303;pointer-events:none}
+  .glitch::before{color:#0d0303;opacity:.8;animation:shiftA .42s steps(3,end) infinite;clip-path:inset(0 0 52% 0)}
+  .glitch::after{color:#ff2b38;opacity:.85;animation:shiftB .36s steps(3,end) infinite;clip-path:inset(52% 0 0 0)}
+  @keyframes tvglitch{0%{transform:translate(0,0) skewX(0)}20%{transform:translate(-1px,1px) skewX(-2deg)}
+    40%{transform:translate(2px,-1px) skewX(1.6deg)}60%{transform:translate(-2px,0) skewX(-1.2deg)}
+    80%{transform:translate(1px,1px) skewX(2deg)}100%{transform:translate(0,0) skewX(0)}}
+  @keyframes shiftA{0%{transform:translate(-3px,0)}50%{transform:translate(4px,-1px)}100%{transform:translate(-2px,0)}}
+  @keyframes shiftB{0%{transform:translate(3px,0)}50%{transform:translate(-4px,1px)}100%{transform:translate(2px,0)}}
+
+  .nomore{text-align:center;color:#4a0d11;font-size:12.5px;padding:6px 0 30px;letter-spacing:2px}
+  .foot{text-align:center;margin-top:6px}
+  .foot span{font-size:11px;color:#3d0a0d;letter-spacing:7px;text-indent:7px}
+
+
+  /* 管理员入口与登录框 */
+  .hdrbtns{margin-left:auto;display:flex;gap:10px}
+  .adm{border:1px solid #551013;color:#7d1419;background:transparent;border-radius:1px;
+    padding:6px 16px;font-size:11.5px;letter-spacing:3px;text-indent:3px;cursor:pointer;font-family:inherit;
+    transition:.2s;box-shadow:0 0 8px rgba(180,20,30,.25), inset 0 0 6px rgba(120,10,16,.2)}
+  .adm:hover{color:#d81f2b;border-color:#8e161c;box-shadow:0 0 14px rgba(216,31,43,.5), inset 0 0 8px rgba(120,10,16,.3)}
+  .mask{position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:50;display:none;
+    align-items:center;justify-content:center;padding:20px}
+  .mask.on{display:flex}
+  .panel{width:320px;max-width:94vw;background:linear-gradient(180deg,#0b0404,#070303);
+    border:1px solid #461015;border-radius:2px;padding:30px 26px 26px;text-align:center;
+    box-shadow:0 0 40px rgba(140,16,22,.35), inset 0 0 60px rgba(110,8,14,.12);
+    animation:pin .22s ease-out}
+  @keyframes pin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .pav{width:56px;height:56px;border-radius:50%;margin:0 auto 18px;position:relative;
+    background:radial-gradient(circle at 38% 32%, #1a0c0d, #0a0405 70%);
+    border:1px solid #551013;box-shadow:0 0 14px rgba(180,20,30,.4), inset 0 0 10px rgba(120,10,16,.4)}
+  .pav::after{content:'';position:absolute;inset:8px;border-radius:50%;
+    border:1px dashed rgba(142,22,28,.5)}
+  .fld{margin-bottom:12px;text-align:left}
+  .fld label{display:block;font-size:11px;letter-spacing:3px;color:#7d1419;margin:0 0 5px 2px}
+  .fld input{width:100%;height:40px;background:#0a0405;border:1px solid #3a0f10;border-radius:1px;
+    color:#d81f2b;font-size:14px;letter-spacing:1px;padding:0 12px;font-family:inherit;outline:none;
+    transition:border-color .2s, box-shadow .2s}
+  .fld input:focus{border-color:#8e161c;box-shadow:0 0 10px rgba(216,31,43,.3)}
+  .fld input::placeholder{color:#4a1216}
+  .doit{width:100%;margin-top:8px;padding:9px 0;font-size:13px;letter-spacing:6px;text-indent:6px}
+  .pcancel{margin-top:12px;font-size:11px;letter-spacing:3px;color:#5a1218;cursor:pointer;user-select:none}
+  .pcancel:hover{color:#8e1d24}
+
+  .toast{position:fixed;left:50%;bottom:60px;transform:translate(-50%,10px);
+    background:#150404;color:#c0656d;font-size:13px;padding:9px 16px;border-radius:3px;
+    border:1px solid #3a0f10;opacity:0;pointer-events:none;transition:.25s;z-index:60;white-space:nowrap}
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+  /* 「您已被锁定」首次专用：第一版被盯上特效（无框大字 + 边缘渗光） */
+  .lockwarn{position:fixed;inset:0;z-index:70;display:none;align-items:center;justify-content:center;
+    background:rgba(2,0,0,.86);pointer-events:none}
+  .lockwarn.on{display:flex;animation:lwin 1.6s ease forwards}
+  .lockwarn span{font-family:'ApoSerif','Songti SC',serif;font-size:30px;font-weight:700;
+    letter-spacing:14px;text-indent:14px;color:#ff2b38;
+    text-shadow:0 0 12px rgba(255,30,40,.95), 0 0 40px rgba(200,10,20,.8), 0 0 90px rgba(150,0,10,.7);
+    animation:lwrem .09s steps(2,end) infinite}
+  @keyframes lwrem{0%{transform:translate(0,0)}25%{transform:translate(-1.5px,1px) skewX(-1.5deg)}
+    50%{transform:translate(1.5px,-1px) skewX(1.2deg)}75%{transform:translate(-1px,-1px)}100%{transform:translate(1px,1px)}}
+  @keyframes lwin{0%{opacity:0}8%{opacity:1}75%{opacity:1}100%{opacity:0}}
+  body.watchpulse::after{content:'';position:fixed;inset:0;z-index:65;pointer-events:none;
+    box-shadow:inset 0 0 120px rgba(170,10,18,.55);animation:wpulse 1.6s ease forwards}
+  @keyframes wpulse{0%{opacity:0}15%{opacity:1}70%{opacity:.85}100%{opacity:0}}
+  /* 「您已被锁定」专用：出现半秒后扭曲变体，仅首次 */
+  .toast.danger{background:#2a0507;border-color:#7a161c;color:#ff4d58;
+    box-shadow:0 0 22px rgba(200,15,25,.5), inset 0 0 12px rgba(120,10,16,.4);
+    animation:toastrem .1s steps(2,end) infinite}
+  .toast.danger::before,.toast.danger::after{content:attr(data-t);position:absolute;left:0;top:0;
+    width:100%;padding:9px 16px;background:#2a0507;pointer-events:none}
+  .toast.danger::before{color:#ff2b38;opacity:.75;transform:translate(-2px,0);
+    clip-path:inset(0 0 50% 0);animation:tshiftA .38s steps(3,end) infinite}
+  .toast.danger::after{color:#c81e28;opacity:.8;transform:translate(2px,0);
+    clip-path:inset(50% 0 0 0);animation:tshiftB .32s steps(3,end) infinite}
+  @keyframes toastrem{0%{transform:translate(-50%,0) skewX(0)}
+    30%{transform:translate(calc(-50% - 1px),0) skewX(-1.5deg)}
+    60%{transform:translate(calc(-50% + 1px),0) skewX(1.2deg)}100%{transform:translate(-50%,0) skewX(0)}}
+  @keyframes tshiftA{0%{transform:translate(-3px,0)}50%{transform:translate(3px,-1px)}100%{transform:translate(-2px,0)}}
+  @keyframes tshiftB{0%{transform:translate(3px,0)}50%{transform:translate(-3px,1px)}100%{transform:translate(2px,0)}}
+
+  @media (max-width:560px){
+    header{padding:26px 0 6px;gap:12px}
+    .sigil{width:40px;height:40px}
+    .brand{font-size:21px;letter-spacing:4px;text-indent:4px}
+    .slogan{letter-spacing:3px;font-size:10px}
+    .post{padding:18px 16px 16px}
+  }
+</style>
+</head>
+<body>
+<div class="scan"></div>
+<div class="wrap">
+  <header>
+    <div class="sigil"></div>
+    <div class="brandwrap">
+      <h1 class="brand">APOPHIS</h1>
+      <div class="slogan">混沌带来新生</div>
+    </div>
+    <div class="hdrbtns">
+      <button class="adm" id="btnNew">发帖</button>
+      <button class="adm" id="btnAdmin">管理员入口</button>
+    </div>
+  </header>
+
+  <div class="post">
+    <div class="phead"><span class="aname">匿名</span><span class="pdate">10-15</span></div>
+    <div class="ptxt">
+      <p>最先喝的是组长。上季度他一个人包了半个组的业绩，接单速度快到我们连碰的机会都没有。</p>
+      <p>第二个是和我同期进来的姑娘，家里条件好。我后来才知道一瓶多少钱，那是我两年的工资。</p>
+      <p>我们几个兄弟开始还说这东西肯定有副作用，后来什么也说不出口了，心里比嫉妒难受得多，我甚至在害怕，我不能再这样下去了。</p>
+      <p>上礼拜老板找我谈话，问我最近状态怎么不一样？我说我明明很正常，应该说是我终于变得正常了。</p>
+      <p>轮到我了。</p>
+    </div>
+  </div>
+  <div class="post">
+    <div class="phead"><span class="aname">匿名</span><span class="pdate">10-31</span></div>
+    <div class="ptxt">
+      <p>我除了跑步什么都做不好，老妈从来不会对我说什么，但她越这样我越难受，有时候真恨不得她骂我两句。只有校运会我才觉得自己有点用</p>
+      <p>后来进了省队，我才知道我那点天赋在别人眼里什么也不是。教练当着全队的人的面说我是来管饮水机的，还说不想打杂就滚呗。洗车、洗鞋、拖地，什么都给我干。我恶心得要死，但我真不想退役，我不想回到什么也做不到的日子。。</p>
+      <p>是apophis救了我的梦想。自从喝了这款药水，我再也感受不到任何身体的极限了，我觉得我都能飞起来！只要一直有药水，教练就再也不敢提开除我的事了！他现在看我的眼神都不一样了，我一定要让他知道，我还可以跑得更快，更快，更快，更快！</p>
+      <p>我现在感觉特别好。好到心脏跟要飞出来一样！</p>
+    </div>
+  </div>
+  <div class="post">
+    <div class="phead"><span class="aname">匿名</span><span class="pdate">11-30</span></div>
+    <div class="ptxt">
+      <p>我干了七年销售，每次跑业务喝酒喝到胃出血，不知道被吐了多少口唾沫才混出点样子，才拥有了自己的厂房，然后是自己的药企。拖着那两个吸血鬼走到这里，根本没人知道我付出了多少。</p>
+      <p>所以凭什么？凭什么<b>Infuse</b>那么快就能获批上市？？一个药上市是什么流程我会不清楚？获批编号和临床数据都做不了假，他们怎么可能做到？</p>
+      <p>他们抢我们的标，半年把销售渠道吞得干干净净，公司濒临倒闭，每天我只能活在追债的恐吓里，手机电话卡都不敢插，还得应付那些贱人的嘴脸！</p>
+      <p>我恨他们，我愿意付出我的一切，搞清楚他们到底在搞什么鬼。</p>
+      <p>我不知道你们是谁，也不知道你们是怎么找到我的......这不重要，原来他们<span class="glitch" id="gmsg" data-t="◣◥◤◢※×Ø◇◆#%&@$!?">◣◥◤◢※×Ø◇◆#%&@$!?</span>我终于发现了他们的秘密！那么我为什么不能比他们做得更好，更多？</p>
+      <p>奇迹果然发生了！营收像疯了一样增长，我马上就能还清那些债务了，就像老天真的在保佑我一样！！他们的好日子到头了！赢的人是我！我花了这点时间就狠狠地踩在他们脸上，就像他们毁掉我的心血一样！但我已经不在乎了，我需要的只有你们！！只有apophis！！！只要有这</p>
+    </div>
+  </div>
+  <div class="nomore">——暂无更多内容——</div>
+  <div class="foot"><span id="backgate" style="cursor:pointer">APOPHIS</span></div>
+</div>
+
+
+<!-- 登录框 -->
+<div class="mask" id="mask">
+  <div class="panel">
+    <div class="pav"></div>
+    <div class="fld">
+      <label>账号</label>
+      <input id="acc" type="text" autocomplete="off" spellcheck="false" maxlength="40">
+    </div>
+    <div class="fld">
+      <label>密码</label>
+      <input id="pwd" type="password" autocomplete="off" maxlength="60">
+    </div>
+    <button class="btn doit" id="btnDo">登 录</button>
+    <div class="pcancel" id="pcancel">取 消</div>
+  </div>
+</div>
+
+<div class="lockwarn" id="lockwarn"><span data-t="您已被锁定">您已被锁定</span></div>
+<div class="toast" id="toast"></div>
+<script>
+/* 进入本页即解锁「猝死」搜索中的药企新闻（只此一个用途，不影响其它页面行为） */
+try{
+  localStorage.setItem('hl_unlock_apophis','1');
+}catch(e){}
+function tip(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg; t.classList.remove('danger'); t.classList.add('on');
+  clearTimeout(tip._t);
+  tip._t=setTimeout(function(){ t.classList.remove('on','danger'); },1600);
+}
+document.getElementById('backgate').addEventListener('click', function(){
+  if(location.protocol==='file:'){ location.href='../index.html'; return; }
+  var sc='';
+  try{ sc=new URLSearchParams(location.search).get('sharecode')||''; }catch(e){}
+  location.href='../'+('?sharecode='+(sc||'WL4E3TYTAS'));
+});
+var gm=document.getElementById('gmsg');
+if(gm){
+  var CH='#@%&$!?◆◇◣◥◤◢〇×+*※01ABCXYZ';
+  var base=gm.getAttribute('data-t');
+  setInterval(function(){
+    if(Math.random()<0.6){
+      var n=14+Math.floor(Math.random()*4), s='';
+      for(var i=0;i<n;i++) s+=CH[Math.floor(Math.random()*CH.length)];
+      gm.setAttribute('data-t', s);
+    }else{
+      gm.setAttribute('data-t', base);
+    }
+  }, 100);
+}
+
+/* 管理员入口 */
+var mask=document.getElementById('mask'),
+    accEl=document.getElementById('acc'),
+    pwdEl=document.getElementById('pwd');
+var ACCOUNTS={'prophet':'endthecycle','disciple':'endthecycle'};
+var typing=false;
+function sawPwdArticle(){
+  try{ return localStorage.getItem('hl_saw_pwd_article')==='1'; }catch(e){ return false; }
+}
+function openAdmin(){
+  mask.classList.add('on');
+  pwdEl.value='';
+  if(typing) return;                       // 正在逐字打，别打断
+  var first=false, lastUser='';
+  try{ first=!localStorage.getItem('hl_apo_autofill'); }catch(e){}
+  try{ lastUser=localStorage.getItem('hl_apo_user')||''; }catch(e){}
+  if(!sawPwdArticle()){
+    // 没看过密码文章：不预填，留给玩家自己输（输错才有「账号不存在」的提示）
+    if(!accEl.value) accEl.value='';
+    setTimeout(function(){ if(!typing) accEl.focus(); }, 60);
+    return;
+  }
+  if(first){
+    // 首次：一字一顿地打出来
+    try{ localStorage.setItem('hl_apo_autofill','1'); }catch(e){}
+    typing=true;
+    accEl.value='';
+    var word='prophet', i=0;
+    (function step(){
+      if(!mask.classList.contains('on')){ typing=false; return; }
+      if(i<word.length){
+        accEl.value+=word[i++];
+        setTimeout(step, 230 + Math.floor(Math.random()*90));   // 一字一顿，像有人在敲
+      }else{
+        typing=false;
+        try{ localStorage.setItem('hl_apo_user','prophet'); }catch(e){}
+      }
+    })();
+  }else{
+    // 之后：静态预填，不再播动画。只预填「真正登录过」的账号（以 hl_apo_seen 为准），否则 prophet
+    var seen=[];
+    try{ seen=JSON.parse(localStorage.getItem('hl_apo_seen')||'[]'); }catch(e){}
+    var fill=(ACCOUNTS.hasOwnProperty(lastUser) && seen.indexOf(lastUser)>=0)?lastUser:'prophet';
+    accEl.value=fill;
+    setTimeout(function(){ pwdEl.focus(); }, 60);
+  }
+}
+document.getElementById('btnAdmin').addEventListener('click', openAdmin);
+/* 发帖：首次屏幕正中「您已被锁定」大字演出，之后永远普通拒绝 */
+var lockShown=false;
+document.getElementById('btnNew').addEventListener('click', function(){
+  if(!lockShown){
+    lockShown=true;
+    var w=document.getElementById('lockwarn');
+    w.classList.add('on');
+    document.body.classList.add('watchpulse');
+    try{ if(navigator.vibrate) navigator.vibrate([80,60,160]); }catch(e){}
+    setTimeout(function(){
+      w.classList.remove('on');
+      document.body.classList.remove('watchpulse');
+    }, 1600);
+  }else{
+    tip('您已被锁定');
+  }
+});
+
+document.getElementById('btnDo').addEventListener('click', doLogin);
+document.getElementById('pcancel').addEventListener('click', function(){ mask.classList.remove('on'); });
+mask.addEventListener('click', function(e){ if(e.target===mask) mask.classList.remove('on'); });
+function doLogin(){
+  if(typing) return;
+  var a=accEl.value.replace(/\s+/g,''), p=pwdEl.value;
+  if(!a){ tip('请输入账号'); accEl.focus(); return; }
+  if(!p){ tip('请输入密码'); pwdEl.focus(); return; }
+  if(!ACCOUNTS.hasOwnProperty(a)){ tip('账号不存在'); accEl.focus(); return; }
+  if(p.trim().toLowerCase()!==ACCOUNTS[a]){ tip('密码错误'); pwdEl.focus(); return; }
+  mask.classList.remove('on');
+  typing=false;
+  try{ localStorage.setItem('hl_apo_user',a); }catch(e){}
+  try{
+    var seen=JSON.parse(localStorage.getItem('hl_apo_seen')||'[]');
+    if(seen.indexOf(a)<0){ seen.push(a); localStorage.setItem('hl_apo_seen',JSON.stringify(seen)); }
+  }catch(e){}
+  gotoLog(a);
+}
+/* 登录后直接进入「日志」（真相页2），不再退回发帖界面 */
+function gotoLog(u){
+  if(location.protocol==='file:'){ location.href='../truth2/index.html?u='+encodeURIComponent(u); return; }
+  var sc='';
+  try{ sc=new URLSearchParams(location.search).get('sharecode')||''; }catch(e){}
+  location.href='/apophis/truth2/?u='+encodeURIComponent(u)+('&sharecode='+(sc||'WL4E3TYTAS'));
+}
+[pwdEl,accEl].forEach(function(el){
+  el.addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
+});
+</script>
+</body>
+</html>

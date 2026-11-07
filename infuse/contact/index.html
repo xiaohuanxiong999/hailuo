@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联系我们 - Infuse生物医药</title>
+<style>
+  .brandmark{height:30px;vertical-align:-5px;margin-top:-5px;margin-right:8px;display:inline-block}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;color:#e8e0f2;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:#12081f;line-height:1.85}
+  ::selection{background:#8a4fd8;color:#fff}
+
+  /* 星空背景 */
+  .sky{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse 90% 60% at 70% -10%, rgba(150,60,200,.28), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 15% 30%, rgba(230,90,180,.14), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 50% 110%, rgba(90,40,160,.25), transparent 65%),
+      linear-gradient(180deg,#170a2b 0%,#12081f 45%,#0d0618 100%)}
+  .stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+  .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.7;
+    animation:tw 3s ease-in-out infinite}
+  .stars i:nth-child(3n){width:1px;height:1px;opacity:.45}
+  .stars i:nth-child(4n){width:2.5px;height:2.5px;opacity:.9;box-shadow:0 0 6px rgba(255,220,255,.8)}
+  .stars i:nth-child(5n){animation-duration:5s}
+  @keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+  .wrap{position:relative;z-index:1}
+
+  /* 顶部工具条 */
+  .utilbar{background:rgba(10,5,20,.75);border-bottom:1px solid rgba(180,120,240,.15)}
+  .utilbar .in{max-width:1080px;margin:0 auto;padding:8px 22px;display:flex;justify-content:flex-end;gap:26px}
+  .utilbar a{color:#a08cc4;font-size:12px;cursor:pointer;text-decoration:none}
+  .utilbar a:hover{color:#d8c8f0}
+
+  /* 主导航 */
+  .navbar{background:rgba(14,7,26,.85);border-bottom:1px solid rgba(180,120,240,.18);
+    position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+  .navbar .in{max-width:1080px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:34px}
+  .logo{font-size:24px;font-weight:800;letter-spacing:.5px;cursor:pointer;user-select:none;
+    background:linear-gradient(90deg,#e58ee8,#a86ef5 60%,#7ec8f5);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 10px rgba(190,110,240,.45))}
+  .mainnav{margin-left:auto;display:flex;gap:28px}
+  .mainnav a{color:#cbb8ea;font-size:14px;cursor:pointer;text-decoration:none;padding:4px 0;
+    border-bottom:2px solid transparent}
+  .mainnav a:hover{color:#fff;text-shadow:0 0 8px rgba(220,150,255,.6)}
+  .mainnav a.act{color:#f0a0e8;border-bottom-color:#f0a0e8}
+
+  /* Hero：实底面板（参照绿色版的深色块 + 大圆弧纹理） */
+  .hero{max-width:1080px;margin:0 auto;padding:84px 22px 76px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(circle 620px at 78% 30%, rgba(150,70,210,.16), transparent 70%),
+      radial-gradient(circle 900px at 50% 120%, rgba(230,90,180,.10), transparent 70%),
+      linear-gradient(160deg,#221038 0%,#1a0c2e 55%,#150925 100%);
+    border-bottom:1px solid rgba(180,120,240,.15)}
+  .hero::before{content:'';position:absolute;right:-160px;top:50%;transform:translateY(-50%);
+    width:620px;height:620px;border-radius:50%;
+    border:1px solid rgba(200,140,250,.12);pointer-events:none}
+  .hero::after{content:'';position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+    width:460px;height:460px;border-radius:50%;
+    border:1px solid rgba(200,140,250,.08);pointer-events:none}
+  .hero>*{position:relative;z-index:1}
+  .badge{display:inline-block;border:1px solid rgba(200,140,250,.5);color:#d8b8f5;
+    padding:4px 14px;font-size:12px;letter-spacing:5px;text-indent:5px;margin-bottom:30px}
+  .hero h1{margin:0 0 24px;font-size:46px;font-weight:800;line-height:1.3;letter-spacing:1px;
+    background:linear-gradient(100deg,#ffd9f4,#d0a8ff 45%,#9fd4ff);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 16px rgba(190,110,240,.3))}
+  .hero .intro{max-width:640px;color:#cfc0e8;font-size:15.5px;margin:0 0 40px}
+  .navbtns{display:flex;gap:14px;flex-wrap:wrap}
+  .nbtn{border:1px solid rgba(200,140,250,.45);background:rgba(120,60,190,.14);color:#e6d6fb;
+    border-radius:22px;padding:9px 26px;font-size:14px;letter-spacing:2px;cursor:pointer;font-family:inherit;
+    transition:.25s}
+  .nbtn:hover{background:rgba(150,80,220,.3);border-color:rgba(220,160,255,.8);
+    box-shadow:0 0 16px rgba(190,110,240,.45);color:#fff}
+
+  /* 通用分节 */
+  .sec{max-width:1080px;margin:0 auto;padding:56px 22px}
+  .sec .eyebrow{color:#b48ae0;font-size:12px;letter-spacing:6px;text-indent:6px;margin:0 0 10px}
+  .sec h2{margin:0 0 34px;font-size:30px;font-weight:800;color:#f4ecff}
+
+  /* 价值观四卡 */
+  .vals{display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border:1px solid rgba(180,120,240,.2);background:rgba(90,40,150,.08)}
+  .val{padding:30px 24px;border-right:1px solid rgba(180,120,240,.2)}
+  .val:last-child{border-right:none}
+  .val b{display:block;font-size:13px;color:#b48ae0;letter-spacing:3px;margin-bottom:14px;font-weight:600}
+  .val span{font-size:17px;font-weight:700;color:#f0e6ff;letter-spacing:2px}
+
+  /* 药品安全 */
+  .safe .txt{max-width:760px;color:#cfc0e8;font-size:15px}
+  .safe .txt p{margin:0 0 14px}
+
+  /* 联系我们 */
+  .contact .inner{max-width:640px;margin:0 auto;padding:56px 22px}
+  .contact h2{margin:0 0 10px;font-size:30px;font-weight:800;color:#f4ecff}
+  .contact .lead{color:#bca8e0;font-size:14px;margin:0 0 30px}
+  .fld{margin-bottom:18px}
+  .fld label{display:block;font-size:13px;color:#bca8e0;letter-spacing:1px;margin-bottom:7px}
+  .fld input,.fld textarea{width:100%;border:1px solid rgba(170,110,230,.35);border-radius:8px;
+    background:rgba(20,10,40,.6);color:#f0e8fc;font-size:14px;padding:12px 14px;font-family:inherit;
+    outline:none;transition:border-color .2s, box-shadow .2s}
+  .fld input:focus,.fld textarea:focus{border-color:rgba(210,150,255,.7);box-shadow:0 0 12px rgba(190,110,240,.3)}
+  .fld textarea{min-height:150px;resize:vertical}
+  .submit{border:none;border-radius:8px;padding:12px 42px;font-size:15px;letter-spacing:4px;text-indent:4px;
+    cursor:pointer;font-family:inherit;color:#fff;background:linear-gradient(95deg,#b05ce8,#7a5cf0);transition:.25s}
+  .submit:hover{box-shadow:0 0 18px rgba(170,100,240,.6)}
+
+  /* 扭曲黑幕（留言框触发） */
+  .veil{position:absolute;inset:0;border-radius:8px;display:none;z-index:5;
+    background:#05030a;color:#c9b8ee;padding:16px 20px 16px 16px;font-size:14px;line-height:2.05;
+    border:1px solid rgba(180,120,240,.4);overflow-y:auto;overscroll-behavior:contain;
+    scrollbar-width:thin;scrollbar-color:rgba(180,120,240,.32) transparent}
+  .veil.on{display:block}
+  /* 问句：静止，取 Infuse 标志的紫粉渐变 */
+  .veil .g{display:inline-block;font-weight:800;letter-spacing:.5px;
+    background:linear-gradient(90deg,#e58ee8,#a86ef5 60%,#7ec8f5);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 8px rgba(190,110,240,.5))}
+  /* 黑幕滚动条：紫色，淡 */
+  .veil::-webkit-scrollbar{width:6px}
+  .veil::-webkit-scrollbar-track{background:transparent}
+  .veil::-webkit-scrollbar-thumb{background:rgba(180,120,240,.3);border-radius:3px}
+  .veil::-webkit-scrollbar-thumb:hover{background:rgba(200,140,255,.55)}
+  /* 页面滚动条：改颜色，保留可拖拽 */
+  html{scrollbar-color:rgba(150,80,220,.5) rgba(20,10,40,.5);scrollbar-width:thin}
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:rgba(20,10,40,.55)}
+  ::-webkit-scrollbar-thumb{background:rgba(150,80,220,.5);border-radius:5px}
+  ::-webkit-scrollbar-thumb:hover{background:rgba(180,110,240,.7)}
+  .cbox ::-webkit-scrollbar{width:6px}
+
+  .toast{position:fixed;left:50%;bottom:56px;transform:translate(-50%,10px);
+    background:#241338;color:#d8c6f2;font-size:13px;padding:9px 16px;border-radius:6px;
+    border:1px solid rgba(180,120,240,.4);opacity:0;pointer-events:none;transition:.25s;z-index:80;white-space:nowrap}
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+
+  /* 底栏 */
+  .foot{border-top:1px solid rgba(180,120,240,.18);margin-top:40px}
+  .foot .in{max-width:1080px;margin:0 auto;padding:22px;display:flex;align-items:center;justify-content:space-between}
+  .foot .fl{font-size:20px;font-weight:800;
+    background:linear-gradient(90deg,#e58ee8,#a86ef5);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .foot .fr{font-size:11.5px;color:#8f7ab0;letter-spacing:1px}
+
+  @media (max-width:640px){
+    .hero{padding:60px 22px 52px}
+    .hero h1{font-size:30px}
+    .mainnav{gap:16px}
+    .mainnav a{font-size:12.5px}
+    .navbar .in{gap:16px}
+    .vals{grid-template-columns:repeat(2,1fr)}
+    .val:nth-child(2){border-right:none}
+    .val:nth-child(1),.val:nth-child(2){border-bottom:1px solid rgba(180,120,240,.2)}
+  }
+</style>
+<style>
+  /* contact 专属微调 */
+  .contact{max-width:1080px;margin:0 auto;padding:56px 22px 20px}
+  .contact h2{margin:0 0 10px;font-size:30px;font-weight:800;color:#f4ecff}
+  .contact .lead{color:#bca8e0;font-size:14px;margin:0 0 30px}
+  .cbox{max-width:640px}
+</style>
+</head>
+<body>
+<div class="sky"></div>
+<div class="stars" id="stars"></div>
+<div class="wrap">
+
+  <div class="utilbar">
+    <div class="in"><a data-deny>投资者关系</a><a data-deny>供应商门户</a></div>
+  </div>
+
+  <div class="navbar">
+    <div class="in">
+      <div class="logo" onclick="gotoAbout()"><img class="brandmark" src="data:image/png;base64,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" alt="">Infuse</div>
+      <div class="mainnav">
+        <a onclick="gotoAbout()">关于我们</a>
+        <a data-deny>研发与管线</a>
+        <a data-deny>新闻中心</a>
+        <a data-deny>社会责任</a>
+        <a class="act">联系我们</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <h2>联系我们</h2>
+    <p class="lead">媒体与投资者垂询、合规举报，请通过以下方式与我们取得联系。<br>我们会在 3 个工作日内回复。</p>
+    <div class="cbox">
+      <div class="fld"><label>姓名</label><input placeholder="请输入您的姓名" maxlength="30"></div>
+      <div class="fld"><label>联系方式</label><input placeholder="邮箱或手机号" maxlength="50"></div>
+      <div class="fld" style="position:relative">
+        <label>留言内容</label>
+        <textarea id="msg" placeholder="请描述您的问题......"></textarea>
+        <div class="veil" id="veil"></div>
+      </div>
+      <button class="submit" id="btnSend">提交</button>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="in">
+      <div class="fl">Infuse</div>
+      <div class="fr">© Infuse 保留所有解释权利</div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script>
+/* 星空 */
+(function(){
+  var box=document.getElementById('stars'), s='';
+  for(var i=0;i<110;i++){
+    s+='<i style="left:'+(Math.random()*100).toFixed(2)+'%;top:'+(Math.random()*100).toFixed(2)+'%;animation-delay:'+(Math.random()*4).toFixed(2)+'s"></i>';
+  }
+  box.innerHTML=s;
+})();
+var tipHeld=false;
+function tip(msg){
+  if(tipHeld) return;
+  var t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('on');
+  clearTimeout(tip._t);
+  tip._t=setTimeout(function(){ t.classList.remove('on'); },1600);
+}
+document.querySelectorAll('[data-deny]').forEach(function(a){
+  a.addEventListener('click', function(){ tip('您无权访问该页面'); });
+});
+function gotoAbout(){
+  if(location.protocol==='file:'){ location.href='../about/index.html'; return; }
+  var sc='';
+  try{ sc=new URLSearchParams(location.search).get('sharecode')||''; }catch(e){}
+  location.href='/infuse/about/'+('?sharecode='+(sc||'WL4E3TYTAS'));
+}
+
+/* 提交逻辑统一在下方（留言内容即答案），此处不再预先弹提示 */
+
+/* 留言框：只有空白时黑幕才浮现（悬停或聚焦）；一打字就隐藏，移开鼠标再显示 */
+var veil=document.getElementById('veil'),
+    msgEl=document.getElementById('msg'),
+    veilTimer=null,
+    veilShown=false;
+function isTyping(){ return (msgEl.value||'').length>0; }
+function showVeil(){
+  if(veilShown || isTyping()) return;
+  var html =
+    '<p>如果你已经找到了这里，大概一切都已经无法挽回了。纵使最终还是走到了这一步，以他的谨慎也不会把我们的任何把柄泄露给公众的。但我还是希望至少留下这段话，让找到这里的你知道infuse身上发生了什么，他又做了什么——无论这个选择会给我们带来怎样的后果。</p>'+
+    '<p>我造成的后果已经足够多了。</p>'+
+    '<p>但在此之前，为了确认你是对的人，我想问一个问题：<span class="g" data-t="钥匙是什么？">钥匙是什么？</span></p>'+
+    '<p style="color:#7a6298;font-size:12.5px">（在留言内容中写下你的回答，然后提交。）</p>';
+  veil.innerHTML=html;
+  veil.classList.add('on');
+  veil.scrollTop=0;
+  veilShown=true;
+}
+function hideVeil(){
+  if(!veilShown) return;
+  veil.classList.remove('on');
+  veilShown=false;
+}
+var msgFld=msgEl.closest('.fld');
+/* 黑幕盖在留言框上，所以整个 fld 区域都用坐标判断“鼠标还在不在” */
+function ptsInFld(x,y){
+  var r=msgFld.getBoundingClientRect();
+  return x>=r.left && x<=r.right && y>=r.top && y<=r.bottom;
+}
+msgFld.addEventListener('mouseenter', function(){ clearTimeout(veilTimer); showVeil(); });
+msgFld.addEventListener('mouseleave', function(e){
+  if(ptsInFld(e.clientX, e.clientY)) return;
+  hideVeil();
+});
+document.addEventListener('mousemove', function(e){
+  var inside = ptsInFld(e.clientX, e.clientY) || e.target===msgEl;
+  if(inside) showVeil(); else hideVeil();
+});
+/* 黑幕不挡输入：点击即聚焦留言框；滚轮交给黑幕自身滚动（它的滚动条被隐藏了） */
+veil.addEventListener('click', function(){ msgEl.focus(); });
+veil.addEventListener('wheel', function(e){
+  var maxS = veil.scrollHeight - veil.clientHeight;
+  if(maxS<=0) return;                       // 内容没溢出 → 允许页面滚
+  var atTop = veil.scrollTop<=0, atBot = veil.scrollTop>=maxS-1;
+  if((e.deltaY<0 && atTop) || (e.deltaY>0 && atBot)) return;
+  veil.scrollTop += e.deltaY;
+  e.preventDefault();
+}, {passive:false});
+/* 一有内容就收起黑幕，避免“盲打”；清空后若鼠标还在框内则重新浮现 */
+function syncVeil(){
+  if(isTyping()) hideVeil();
+  else {
+    var r=msgFld.getBoundingClientRect();
+    if(lastX>=r.left && lastX<=r.right && lastY>=r.top && lastY<=r.bottom) showVeil();
+  }
+}
+var lastX=-1,lastY=-1;
+document.addEventListener('mousemove', function(e){ lastX=e.clientX; lastY=e.clientY; });
+msgEl.addEventListener('focus', function(){ clearTimeout(veilTimer); showVeil(); });
+msgEl.addEventListener('input', syncVeil);
+msgEl.addEventListener('change', syncVeil);
+
+/* 提交：留言内容即答案 */
+document.getElementById('btnSend').addEventListener('click', function(){
+  var v=(msgEl.value||'').trim().toLowerCase().replace(/[“”\"'。.，,\s]+$/,'').replace(/^[“”\"']+/,'');
+  if(v==='revelation'){
+    tipHeld=true;                       // 正确密钥：不弹任何提示，直接进文档
+    hideVeil();
+    if(location.protocol==='file:'){ location.href='../../truth/one/index.html'; return; }
+    var sc='';
+    try{ sc=new URLSearchParams(location.search).get('sharecode')||''; }catch(e){}
+    location.href='/truth/one/'+('?sharecode='+(sc||'WL4E3TYTAS'));
+  }else{
+    tip('发送失败，请稍后重试');
+  }
+});
+/* 姓名/联系方式：无需输入 */
+document.querySelectorAll('.cbox .fld input').forEach(function(inp){
+  inp.addEventListener('click', function(){ this.blur(); tip('您无需输入'); });
+  inp.addEventListener('focus', function(){ this.blur(); tip('您无需输入'); });
+});
+</script>
+</body>
+</html>

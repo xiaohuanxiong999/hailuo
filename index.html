@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>跳转中…</title>
+<style>
+  html,body{margin:0;height:100%;background:#0d0f14;color:#8b93a2;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;display:flex;align-items:center;justify-content:center}
+  .t{font-size:14px;letter-spacing:2px;animation:p 1.2s ease-in-out infinite}
+  @keyframes p{0%,100%{opacity:.35}50%{opacity:1}}
+</style>
+<script>
+(function(){
+  // 保留 sharecode 跳到搜索页
+  var sc='';
+  try{ sc=new URLSearchParams(location.search).get('sharecode')||''; }catch(e){}
+  if(!sc){ var m=location.pathname.match(/\/s\/([A-Za-z0-9]+)/); if(m) sc=m[1]; }
+  var q=sc?('?sharecode='+sc):'';
+  // 预览面板代理环境直接开正式站
+  if(/(^|\.)workbuddy\.cn$/.test(location.hostname) || location.protocol==='about:'){
+    window.open('https://hailuo.app.workbuddy.host/search/'+q,'_blank');
+    return;
+  }
+  if(location.protocol==='file:'){
+    location.href='search/index.html'+q;
+  }else{
+    location.replace('/search/'+q);
+  }
+})();
+</script>
+</head>
+<body><div class="t">· · ·</div></body>
+</html>

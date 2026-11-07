@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APOPHIS</title>
+<style>
+  @font-face{
+    font-family:'ApoSerif';
+    src:url(data:font/woff2;base64,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);
+    font-display:swap;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#040404}
+  body{color:#b8303a;min-height:100vh;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px;line-height:1.9;
+    background-image:radial-gradient(ellipse 80% 55% at 50% -10%, rgba(120,10,16,.22), transparent 70%),
+                     repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 3px);
+    background-attachment:fixed}
+  ::selection{background:#b8303a;color:#000}
+
+  .scan{position:fixed;inset:0;pointer-events:none;z-index:9;
+    background:linear-gradient(to bottom, transparent 0%, rgba(180,20,30,.045) 50%, transparent 100%);
+    animation:scanmove 7s linear infinite}
+  @keyframes scanmove{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
+
+  .gate{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:40px 20px;position:relative;z-index:2;text-align:center}
+  .sigil{width:64px;height:64px;margin-bottom:22px}
+  .brand{font-family:'ApoSerif','Songti SC',serif;font-size:52px;font-weight:700;
+    letter-spacing:14px;color:#d81f2b;margin:0;text-indent:14px;line-height:1.25;
+    text-shadow:0 0 10px rgba(255,40,52,.9), 0 0 26px rgba(216,31,43,.75), 0 0 70px rgba(180,20,30,.6), 0 0 120px rgba(140,10,18,.55)}
+  .rule{display:flex;align-items:center;justify-content:center;gap:14px;margin:22px 0 14px}
+  .rule i{display:block;height:1px;width:72px;background:linear-gradient(90deg,transparent,#5e1015)}
+  .rule i:last-child{background:linear-gradient(90deg,#5e1015,transparent)}
+  .rule b{width:5px;height:5px;background:#8e161c;transform:rotate(45deg)}
+  .slogan{font-size:13px;letter-spacing:9px;color:#7d1419;text-indent:9px}
+
+  .headbtns{display:flex;justify-content:center;gap:14px;margin-top:38px}
+  .btn{border:1px solid #551013;color:#a0242c;background:transparent;border-radius:1px;
+    padding:8px 34px;font-size:13px;letter-spacing:4px;cursor:pointer;font-family:inherit;
+    text-indent:4px;transition:.2s;
+    box-shadow:0 0 10px rgba(180,20,30,.35), inset 0 0 8px rgba(120,10,16,.25)}
+  .btn:hover{box-shadow:0 0 16px rgba(216,31,43,.55), inset 0 0 10px rgba(120,10,16,.35);
+    background:rgba(120,14,20,.18);border-color:#8e161c;color:#d81f2b}
+
+  .toast{position:fixed;left:50%;bottom:60px;transform:translate(-50%,10px);
+    background:#150404;color:#c0656d;font-size:13px;padding:9px 16px;border-radius:3px;
+    border:1px solid #3a0f10;opacity:0;pointer-events:none;transition:.25s;z-index:60;white-space:nowrap}
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:560px){
+    .brand{font-size:36px;letter-spacing:9px;text-indent:9px}
+    .slogan{letter-spacing:6px;font-size:11.5px}
+    .sigil{width:52px;height:52px;margin-bottom:16px}
+  }
+</style>
+</head>
+<body>
+<div class="scan"></div>
+<div class="gate">
+  <div class="sigil"></div>
+  <h1 class="brand">APOPHIS</h1>
+  <div class="rule"><i></i><b></b><i></i></div>
+  <div class="slogan">混沌带来新生</div>
+  <div class="headbtns">
+    <button class="btn" id="btnPost">留 言</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script>
+/* 进入本页即解锁「猝死」搜索中的药企新闻 */
+try{
+  localStorage.setItem('hl_unlock_apophis','1');
+}catch(e){}
+function tip(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('on');
+  clearTimeout(tip._t);
+  tip._t=setTimeout(function(){ t.classList.remove('on'); },1600);
+}
+function gotoBoard(){
+  if(location.protocol==='file:'){ location.href='board/index.html'; return; }
+  var sc='';
+  try{ sc=new URLSearchParams(location.search).get('sharecode')||''; }catch(e){}
+  location.href='board/'+('?sharecode='+(sc||'WL4E3TYTAS'));
+}
+document.getElementById('btnPost').addEventListener('click', gotoBoard);
+</script>
+</body>
+</html>

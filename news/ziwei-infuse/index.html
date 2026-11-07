@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infuse生物医药高管辞职，市值持续缩水——紫薇经济</title>
+<style>
+  :root{
+    --bg:#141021;
+    --panel:#1b1530;
+    --ink:#e9e4f4;
+    --ink-2:#b3a8cc;
+    --ink-3:#7d739a;
+    --purple:#9a7fd0;
+    --line:rgba(160,120,230,.14);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:16px;line-height:2.0;
+    -webkit-user-select:text;user-select:text;
+    min-height:100vh;
+    background-image:
+      radial-gradient(ellipse 90% 40% at 50% -8%, rgba(130,80,220,.14), transparent 65%),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 1px, transparent 1px 3px);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:34px 22px 90px}
+
+  .crumb{font-size:13px;color:var(--ink-3);margin-bottom:20px}
+  .crumb .home{cursor:pointer;color:var(--purple)}
+  .crumb .home:hover{text-decoration:underline}
+
+  .tag{display:inline-block;font-size:11.5px;letter-spacing:2px;color:#c9b8ee;
+    border:1px solid rgba(160,120,230,.4);border-radius:3px;padding:2px 10px;margin-bottom:14px}
+
+  h1{font-size:25px;line-height:1.55;font-weight:800;color:var(--ink);margin:0 0 12px}
+  .meta{font-size:13px;color:var(--ink-3);padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:26px}
+  .meta b{color:var(--ink-2);font-weight:600}
+
+  .art p{margin:0 0 24px;color:#d6cde9;text-align:justify}
+  .art p b{color:#c9b8ee;font-weight:700}
+  .broken{color:#8a7fa8;background:rgba(130,80,220,.08);
+    border-bottom:1px dotted rgba(160,120,230,.5);padding:0 2px}
+
+  .back{margin-top:44px;text-align:center}
+  .back a{color:var(--purple);font-size:14px;cursor:pointer;text-decoration:none}
+  .back a:hover{text-decoration:underline}
+
+  .foot{max-width:720px;margin:0 auto;padding:0 22px 46px;
+    font-size:12px;color:var(--ink-3);display:flex;justify-content:space-between}
+
+  /* 文字消失阶段的整页渐隐辅助 */
+  body.vanish .art p{color:#d6cde9}
+  html{scrollbar-color:rgba(150,80,220,.5) rgba(20,10,40,.5);scrollbar-width:thin}
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:rgba(20,10,40,.55)}
+  ::-webkit-scrollbar-thumb{background:rgba(150,80,220,.5);border-radius:5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><span class="home" id="goSearch">搜索</span> › 资讯 › 紫薇经济</div>
+  <div class="tag">财经 · 公司报道</div>
+  <h1>Infuse生物医药高管辞职，市值持续缩水</h1>
+  <div class="meta"><b>紫薇经济</b> · 2024年11月28日</div>
+
+  <div class="art" id="art">
+    <p>Infuse生物医药（下称"infuse"）成立时间短，管线集中，核心产品从临床到获批的推进速度在业内罕见。但自上市起，公司内部接连发生重大人事变动，多位高管辞去职位，记者尝试联系，均被婉拒或无应答。</p>
+    <p>失去管理层背书的infuse股价自高位一路下行，截至发稿，其市值较上市首日缩水已超过三成，多个公募基金下调估值。受访的一位分析师表示，他们只是在等待企业给出一个解释，可是infuse选择一直保持沉默，严重打击了市场的信心。</p>
+    <p>真正让市场不安的是，infuse的股权结构在本年度内经历了多次变更，记者核查后发现公司目前的实际持股方为<span class="broken">【文件已损坏】</span>记者就上述变更向公司董事会办公室求证，未获得回复。</p>
+    <p>争议并不只发生在资本市场。此前，infuse推出的<span class="broken">【文件已损坏】</span>曾在业内引发道德伦理与卫生安全上的双重质疑，相关事件被多家媒体报道，随后迅速降温。记者追溯发现，当时的报道如今大多已无法访问<span class="broken">【页面无法正常加载】</span></p>
+  </div>
+
+  <div class="back"><a id="goBack">‹ 返回搜索结果</a></div>
+</div>
+
+<script>
+function qs(k){
+  try{ return new URLSearchParams(location.search).get(k)||''; }catch(e){ return ''; }
+}
+function gotoSearch(){
+  if(location.protocol==='file:'){ location.href='../../search/index.html'; return; }
+  var sc=qs('sharecode');
+  location.href='/search/'+('?sharecode='+(sc||'WL4E3TYTAS'));
+}
+document.getElementById('goSearch').addEventListener('click', gotoSearch);
+document.getElementById('goBack').addEventListener('click', gotoSearch);
+
+/* ===== 20 秒后：正文从最后一个字开始一个一个往前消失，然后回到搜索页，本条结果永久移除 ===== */
+var VANISH_AFTER=20000;
+var gone=false;
+try{ gone = localStorage.getItem('hl_ziwei_gone')==='1'; }catch(e){}
+
+if(gone){
+  /* 已经消失过：本条报道再也无法访问，直接弹回搜索 */
+  document.getElementById('art').innerHTML='';
+  document.querySelector('h1').textContent='';
+  setTimeout(gotoSearch, 400);
+}else{
+  try{ localStorage.setItem('hl_ziwei_seen','1'); }catch(e){}
+  setTimeout(startVanish, VANISH_AFTER);
+}
+
+function startVanish(){
+  var art=document.getElementById('art');
+  /* 收集正文里所有文本节点，从全文最后一个字开始一个一个删 */
+  var nodes=[];
+  (function walk(n){
+    for(var c=n.firstChild;c;c=c.nextSibling){
+      if(c.nodeType===3 && c.nodeValue.length) nodes.push(c);
+      else if(c.nodeType===1) walk(c);
+    }
+  })(art);
+  /* nodes 按文档顺序排列；删除时从最后一个文本节点的最后一个字往前。
+     节奏：开始很慢（每字约 150ms），随进度越来越快，最后几乎连成一片消失 */
+  var totalChars=0;
+  nodes.forEach(function(n){ totalChars+=n.nodeValue.length; });
+  var tick=function(){
+    var last=nodes[nodes.length-1];
+    if(!last){ setTimeout(finish, 700); return; }
+    var remain=0;
+    nodes.forEach(function(n){ remain+=n.nodeValue.length; });
+    var p=1-remain/totalChars;                 /* 进度 0 → 1 */
+    /* 开头慢几秒，之后迅速加速，结尾成片飞快消失 */
+    var delay;
+    if(p<0.04){ delay=150; }
+    else{
+      var q=(p-0.04)/0.96;
+      delay=Math.max(8,150-142*Math.pow(q,0.8));
+    }
+    var step=p>0.8 ? 12 : (p>0.5 ? 8 : (p>0.25 ? 5 : (p>0.08 ? 2 : 1)));
+    for(var d=0;d<step;d++){
+      var ln=nodes[nodes.length-1];
+      if(!ln) break;
+      ln.nodeValue=ln.nodeValue.slice(0,-1);
+      if(!ln.nodeValue.length) nodes.pop();
+    }
+    setTimeout(tick, delay);
+  };
+  function finish(){
+    /* 标记永久消失并回到搜索页 */
+    try{ localStorage.setItem('hl_ziwei_gone','1'); }catch(e){}
+    setTimeout(gotoSearch, 700);
+  }
+  tick();
+}
+</script>
+</body>
+</html>
